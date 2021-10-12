@@ -16,7 +16,6 @@ def check_last_index_db(db):
         key_to_return = key
     return key_to_return
 
-
 def buld_url_to_product(node):
     if node is not None:
         return f'{url + node.attrs["href"]}'
@@ -45,7 +44,6 @@ def make_dict_to_write(array , terms):
     report_dict["products"] = products_list
     return report_dict
     
-
 def build_element_to_write(element):
     product_dict = {}
     price = check_node_isNot_None(element.find(f"span" , class_="a-price-whole"))
@@ -70,7 +68,6 @@ def override_db_handler(last_index , json_db , dict_db):
     json_db[current_index] = dict_db
     return json_db 
     
-
 def write_document(dict_db):
     last_index = check_last_index_db(get_json_db())
     override_db = override_db_handler(last_index , get_json_db() , dict_db)
